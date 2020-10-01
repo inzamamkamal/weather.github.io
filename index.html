@@ -8,7 +8,7 @@
 		<title>Find Your Weather</title>
 
 		<!-- Loading third party fonts -->
-<!-- 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css"> -->
+		<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
 		<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 		<!-- Loading main css file -->
@@ -210,8 +210,8 @@
 		</div>
 
 		
-<!-- 		<script src="js/jquery-1.11.1.min.js"></script>
-		<script src="js/plugins.js"></script> -->
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/plugins.js"></script>
 		<script src="js/app.js"></script>
 	
 	</body>
@@ -221,7 +221,7 @@
 	
 	$(document).ready(function()
 		{
-// 			var loc="patna";
+			// var loc="patna";
 			// Geolocation
 			getLocation();
 			function getLocation() 
@@ -236,7 +236,8 @@
 				  }
 			}
 
-			function showPosition(position) {
+			function showPosition(position) 
+			{
 					var lat= position.coords.latitude;
 					var lon= position.coords.longitude;
 				var fullurl="http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid=2a5cb738a0edff7eea196e9785f975ae&units=metric";
