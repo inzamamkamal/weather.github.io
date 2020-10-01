@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		
+		<title>Find Your Weather</title>
+
+		<!-- Loading third party fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+		<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="style.css">
+		<link rel="icon" type="image/svg" href="images/icons/icon-1.svg"/>
+		<!--[if lt IE 9]>
+		<script src="js/ie-support/html5.js"></script>
+		<script src="js/ie-support/respond.js"></script>
+		<![endif]-->
+		<style type="text/css">
+			#dataloc
+			{
+				font-size: 1.8rem;
+			}
+			#temp
+			{
+				font-size: 4.5rem;
+			}
+			#humiditysvg,#windspeedsvg
+			{
+				height: 75px;
+				width: 75px;
+			}
+			.tempdata
+			{
+				font-size: 16px;
+				color: white;
+			}
+			#sitetitle
+			{
+				font-size: 1.9rem;
+			}
+			#sitedescription
+			{
+				font-size: 1rem;
+			}
+			img[src="images/icons/icon-1.svg"]
+			{
+				width: 80px;
+				height: 70px;
+			}
+			@media screen and (max-width: 991px) {
+      .forecast-container .forecast {
+        display: block;
+        /* width: 16.6667%; */
+        width: 100%;
+        float: left;
+        } 
+        .forecast-header
+        {
+        	font-size: 140%;
+        }
+        .forecast-container .forecast.today .forecast-content {
+     text-align: center; 
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+    	}
+    	.find-location input[type="text"] {
+    width: 100%;
+    padding: 20px 120px 20px 20px;
+    background: #1e202b;
+    color: #eaf1ff;
+    font-size: 25px;
+    border-radius: 30px;
+    outline: none;
+    border:2px solid green;
+}
+.find-location input[type="submit"] {
+    position: absolute;
+    top: 3px;
+    right: 20px;
+    bottom: 3px;
+    padding: 0 40px;
+    border-radius: 60px;
+    outline: none;
+    color:green;
+    font-size: 18px;
+}
+
+		</style>
+
+	</head>
+
+
+	<body>
+
+		
+		<div class="site-content">
+			<div class="site-header">
+				<div class="container">
+					<a href="index.html" class="branding">
+						<img src="images/icons/icon-1.svg" alt="" class="logo">
+						<div class="logo-type">
+							<h1 class="site-title" id="sitetitle">INZAMAM KAMAL</h1>
+							<small class="site-description" id="sitedescription">Find your Weather</small>
+						</div>
+					</a>
+
+					<!-- Default snippet for navigation -->
+					<div class="main-navigation">
+						<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+						<ul class="menu">
+							<li class="menu-item current-menu-item"><a href="index.html">Home</a></li>
+						</ul> <!-- .menu -->
+					</div> <!-- .main-navigation -->
+
+					<div class="mobile-navigation"></div>
+
+				</div>
+			</div> <!-- .site-header -->
+
+			<div class="hero" data-bg-image="images/backgound.jpg">
+				<div class="container find-location">
+					
+						<input type="text" placeholder="Find your location.." id="locatio">
+						<input type="submit" value="Find" id="find">
+				
+
+				</div>
+			</div>
+			<div class="forecast-table">
+				<div class="container">
+					<div class="forecast-container">
+						<div class="today forecast">
+							<div class="forecast-content">
+								<div class="location" id="dataloc"></div>
+								<div id="country"></div>
+								<div class="degree">
+									<div class="num" id="temp">
+										<span></span><sup>o</sup>C
+									</div>
+									<div class="forecast-icon">
+										<img src="images/icons/icon-1.svg" alt="" width=90>
+									</div>	
+								</div>
+								
+							</div>
+						</div>
+
+
+
+						<div class="forecast">
+							<div class="forecast-header">
+								<div class="day">Humidity</div>
+							</div> <!-- .forecast-header -->
+							<div class="forecast-content">
+								<div class="forecast-icon">
+									<img src="images/humidity.svg" alt="" id="humiditysvg">
+								</div>
+								<div class="degree" id="humiditydata"></div>
+								<span class="tempdata">%</span>
+							</div>
+						</div>
+
+
+
+
+						<div class="forecast">
+							<div class="forecast-header">
+								<div class="day">Wind</div>
+							</div> <!-- .forecast-header -->
+							<div class="forecast-content">
+								<div class="forecast-icon">
+									<img src="images/windspeed.svg" alt="" id="windspeedsvg">
+								</div>
+								<div class="degree" id="windspeeddata"></div>
+								<span class="tempdata">Km/h</span>
+							</div>
+						</div>
+
+
+						<div class="forecast">
+							<div class="forecast-header">
+								<div class="day">Description</div>
+							</div> <!-- .forecast-header -->
+							<div class="forecast-content">
+								<div class="forecast-icon">
+									<img src="images/haze.png" alt="" id="windspeedsvg">
+								</div>
+								<div class="degree" id="descriptiondata"></div>
+								
+							</div>
+						</div>
+
+					
+
+					</div>
+				</div>
+			</div>
+
+			
+
+			<footer class="site-footer">
+				<div class="container">
+					<p class="colophon">Copyright 2020 Web Design. Designed by Inzamamaul Tash Kamal. All rights reserved</p>
+				</div>
+			</footer> <!-- .site-footer -->
+		</div>
+
+		
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/app.js"></script>
+	
+	</body>
+
+<script type="text/javascript">
+		
+	
+	$(document).ready(function()
+		{
+			var loc="patna";
+			// Geolocation
+			getLocation();
+			function getLocation() 
+			{
+				  if (navigator.geolocation) 
+				  {
+				    navigator.geolocation.getCurrentPosition(showPosition);
+				  } 
+				  else 
+				  { 
+				    alert("Geolocation is not supported by this browser.");
+				  }
+			}
+
+			function showPosition(position) {
+					var lat= position.coords.latitude;
+					var lon= position.coords.longitude;
+				var fullurl="http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid=2a5cb738a0edff7eea196e9785f975ae&units=metric";
+					$.ajax({
+						url:fullurl,
+						type:"POST",
+						success:function(data,success)
+						{
+							$('#dataloc').text(data.name);
+							$('.num span').text(data.main.temp);
+							$('#country').text(data.sys.country);
+							$('#humiditydata').text(data.main.humidity);
+							$('#windspeeddata').text(data.wind.speed);
+							$('#descriptiondata').text(data.weather[0].description);
+						}
+					});	
+			}
+			
+			
+			$('#find').click(function()
+			{
+				loc = $('#locatio').val();
+				if(loc=="")
+				{
+					alert("Enter Your City Name");
+				}
+				else
+				{
+					var url="http://api.openweathermap.org/data/2.5/weather?q=";
+					var city=loc;
+					var apikey="&appid=2a5cb738a0edff7eea196e9785f975ae&units=metric";
+					var fullurl=url+city+apikey;
+					
+					$.ajax({
+						url:fullurl,
+						type:"POST",
+						success:function(data,success)
+						{
+							$('#dataloc').text(data.name);
+							$('.num span').text(data.main.temp);
+							$('#country').text(data.sys.country);
+							$('#humiditydata').text(data.main.humidity);
+							$('#windspeeddata').text(data.wind.speed);
+							$('#descriptiondata').text(data.weather[0].description);
+						}
+					});	
+				}
+			});
+
+					// var url="http://api.openweathermap.org/data/2.5/weather?q=";
+					// var city=loc;
+					// var apikey="&appid=2a5cb738a0edff7eea196e9785f975ae&units=metric";
+					// var fullurl=url+city+apikey;
+					
+					// $.ajax({
+					// 	url:fullurl,
+					// 	type:"POST",
+					// 	success:function(data,success)
+					// 	{
+					// 		$('#dataloc').text(data.name);
+					// 		$('.num span').text(data.main.temp);
+					// 		$('#country').text(data.sys.country);
+					// 		$('#humiditydata').text(data.main.humidity);
+					// 		$('#windspeeddata').text(data.wind.speed);
+					// 		$('#descriptiondata').text(data.weather[0].description);
+					// 	}
+					// });	
+	});
+
+	
+</script>
+</html>
