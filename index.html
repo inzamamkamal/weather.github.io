@@ -88,6 +88,13 @@
     color:green;
     font-size: 18px;
 }
+			#live
+			{
+				height:20px;
+				width:20px;
+				background-color:red;
+				border-radius:10px solid red;
+			}
 
 		</style>
 
@@ -124,7 +131,7 @@
 			<div class="hero" data-bg-image="images/backgound.jpg">
 				<div class="container find-location">
 					
-						<input type="text" placeholder="Find your location.." id="locatio">
+						<input type="text" placeholder="Enter City Name" id="locatio">
 						<input type="submit" value="Find" id="find">
 				
 
@@ -136,6 +143,7 @@
 						<div class="today forecast">
 							<div class="forecast-content">
 								<div class="location" id="dataloc"></div>
+								<div id="live"></div>
 								<div id="country"></div>
 								<div class="degree">
 									<div class="num" id="temp">
