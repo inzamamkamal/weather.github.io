@@ -8,7 +8,7 @@
 		<title>Find Your Weather</title>
 
 		<!-- Loading third party fonts -->
-		<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
 		<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 		<!-- Loading main css file -->
@@ -221,7 +221,7 @@
 	
 	$(document).ready(function()
 		{
-			var loc="patna";
+// 			var loc="patna";
 			// Geolocation
 			getLocation();
 			function getLocation() 
@@ -258,7 +258,7 @@
 			
 			$('#find').click(function()
 			{
-				loc = $('#locatio').val();
+				var loc = $('#locatio').val();
 				if(loc=="")
 				{
 					alert("Enter Your City Name");
