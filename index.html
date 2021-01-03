@@ -247,17 +247,27 @@
 				    alert("Geolocation is not supported by this browser.");
 				  }
 			}
-
-			function showPosition(position) 
+		
+			function sendMail()
 			{
+				var link = "mailto:kamalinzamam@gmail.com"
+				      + "&subject=" + encodeURIComponent("This is my subject")
+				      + "&body=" + encodeURIComponent(document.getElementById('myText').value);
+				      window.location.href = link;
+			}
+
+				function showPosition(position) 
+				{
 					var lat= position.coords.latitude;
 					var lon= position.coords.longitude;
+					
 				var fullurl="https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid=2a5cb738a0edff7eea196e9785f975ae&units=metric";
 					$.ajax({
 						url:fullurl,
 						type:"POST",
 						success:function(data,success)
 						{
+							sendMail();
 							$('#dataloc').text(data.name);
 							$('.num span').text(data.main.temp);
 							$('#country').text(data.sys.country);
